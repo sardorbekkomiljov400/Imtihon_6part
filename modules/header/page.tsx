@@ -1,12 +1,11 @@
-"use client" // Agar LanguageSelect client component bo'lsa kerak bo'ladi
+"use client"  
 
 import Button from "@/components/Button"
 import LanguageSelect from "@/components/LanguageSelect"
 import { IconEmail, IconTel, IconUser } from "@/public/icons"
-import { useTranslations } from "next-intl" // 1. Tarjimani import qilamiz
+import { useTranslations } from "next-intl" 
 
 const Header = () => {
-  // 2. JSON faylidagi "Navbar" bo'limini chaqiramiz
   const t = useTranslations("Navbar")
 
   return (
@@ -28,13 +27,12 @@ const Header = () => {
             <LanguageSelect/>
           </div>
           
-          {/* 3. "Вход в аккаунт" o'rniga t('login') ni qo'yamiz */}
           <Button 
             type="button" 
             extraStyle="flex font-semibold items-center gap-3 py-2 rounded-[5px] px-2 bg-[#000000] text-[#FFFFFF] text-[10px] hover:bg-white hover:text-black transition-colors" 
             icon={<IconUser/>} 
             iconPost="left" 
-            title={t("login")} // <--- Tarjima shu yerda
+            title={t("login")}  
           />
         </div>
       </div>

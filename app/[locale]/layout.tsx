@@ -29,7 +29,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      {/* 2. Bodyga Tailwind classlarini qaytaring */}
       <body className="antialiased"> 
         <NextIntlClientProvider messages={messages}>
           <Header/>

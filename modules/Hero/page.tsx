@@ -10,8 +10,9 @@ const Hero = () => {
   const t = useTranslations('Hero')
 
   return (
-    <section className='hero-bg2'>
-        <div className='containers p-15 hero-bg rounded-[50px]'>
+    <section className=''>
+        <div className=' relative containers p-15 hero-bg rounded-[50px]'>
+          <Image className=' absolute top-20 -left-25' src={"/images/heroimg_1.png"} alt='img' width={200} height={200}/>
             <HeroHeader/>
             <div className='flex items-center justify-between'>
               <div className='w-100'>
