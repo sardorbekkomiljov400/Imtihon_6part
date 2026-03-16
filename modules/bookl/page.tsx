@@ -1,7 +1,7 @@
 "use client"
 import Button from "@/components/Button"
 import Input from "@/components/Input"
-import { BookingIcon } from "@/public/icons"
+import { BookingIcon, IconArrowRight } from "@/public/icons"
 import { useState } from "react"
 
 
@@ -12,10 +12,17 @@ const Booking = () => {
   return (
     <section className="py-16.75 booking-bg-img"> 
       <div className="containers relative ">
+
+
+
+
           <div className=" booking-bg w-118.75 px-13.5 pb-16.25 pt-25 rounded-[31px]" >
             <div className=" bg-ic p-2   rounded-full absolute bottom-150  ">
               <div className="bg-black p-7 rounded-full">
                 <BookingIcon/>
+
+
+
               </div>
             </div>
               <h2 className="text-[32px] font-bold text-[#000000] mb-6.25">Забронировать стол</h2>
@@ -31,7 +38,7 @@ const Booking = () => {
                   <a className="text-[13px] text-[#06004C] " href="#">Выбрать места на карте </a>
                 </label>
                 <div>
-                  <Button type="submit" title="Забронировать" extraStyle="py-[18px] mt-10.25 px-[24px] rounded-[13px] bg-[#000000] text-white"/>
+                  <Button type="submit" title="Забронировать" icon={<IconArrowRight/>} extraStyle="py-[18px] mt-10.25 flex  px-[24px] rounded-[13px] bg-[#000000] text-white hover:bg-white hover:text-black"/>
                 </div>
               </form>
           </div>
