@@ -5,6 +5,7 @@ type ButtonPropsType = {
   type:"button" | "submit"
   iconPost?: "left" | "right"
   extraStyle?: string
+  
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 

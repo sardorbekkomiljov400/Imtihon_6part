@@ -4,9 +4,11 @@ import Button from "@/components/Button"
 import LanguageSelect from "@/components/LanguageSelect"
 import { IconEmail, IconTel, IconUser } from "@/public/icons"
 import { useTranslations } from "next-intl" 
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const t = useTranslations("Navbar")
+  const router = useRouter();
 
   return (
     <header>
@@ -27,12 +29,7 @@ const Header = () => {
             <LanguageSelect/>
           </div>
           
-          <Button 
-            type="button" 
-            extraStyle="flex font-semibold items-center gap-3 py-2 rounded-[5px] px-2 bg-[#000000] text-[#FFFFFF] text-[10px] hover:bg-white hover:text-black transition-colors" 
-            icon={<IconUser/>} 
-            iconPost="left" 
-            title={t("login")}  
+          <Button onClick={() => router.push('/Login')} type="button" extraStyle="flex font-semibold items-center gap-3 py-2 rounded-[5px] px-2 bg-[#000000] text-[#FFFFFF] text-[10px] hover:bg-white hover:text-black transition-colors"  icon={<IconUser/>}   iconPost="left"  title={t("login")}  
           />
         </div>
       </div>

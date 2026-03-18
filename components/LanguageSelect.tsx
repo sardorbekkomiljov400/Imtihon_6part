@@ -2,17 +2,16 @@
 
 import { FranceFlag, IconRussya, UzbekistanFlag } from "@/public/icons"
 import { useLocale } from "next-intl"
-import { useRouter, usePathname } from "@/i18n/navigation" // E'tibor bering: i18n/navigation'dan oling
+import { useRouter, usePathname } from "@/i18n/navigation" 
 
 type Lang = "ru" | "uz" | "en"
 
 export default function LanguageSelect() {
-  const locale = useLocale() as Lang // Hozirgi tilni olish
+  const locale = useLocale() as Lang  
   const router = useRouter()
   const pathname = usePathname()
 
   const changeLang = (newLocale: Lang) => {
-    // router.replace URL'ni o'zgartiradi va tilni yangilaydi
     router.replace(pathname, { locale: newLocale })
   }
 
@@ -37,11 +36,10 @@ export default function LanguageSelect() {
   const current = langs.find(l => l.code === locale)
 
   return (
-    <div className="relative group w-42.5 text-sm font-medium z-50">
+    <div className="relative group w-35 text-sm font-medium z-50">
       
-      {/* Selected language */}
-      <div className="flex items-center justify-between gap-2 px-4 py-2 rounded-lg border border-transparent hover:border-green-400 transition cursor-pointer">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between  px-4 py-2 rounded-lg border border-transparent hover:border-green-400 transition cursor-pointer">
+        <div className="flex items-center gap-3">
           {current?.icon}
           <span>{current?.label}</span>
         </div>
@@ -57,7 +55,6 @@ export default function LanguageSelect() {
         </svg>
       </div>
 
-      {/* Dropdown list */}
       <div className="absolute left-0 top-[110%] w-full bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
         {langs.map(l => (
           <div

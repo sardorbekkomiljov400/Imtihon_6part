@@ -34,6 +34,12 @@ body{
   background-position: calc(60% - 800px)70px;
 }
 
+.login-bg{
+  background-image: url("/images/body_login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Popular */
 .Popular-bg{
   background-image: url("/images/bludaimg_chap.png"), url("/images/bludaimg_ong.png");
