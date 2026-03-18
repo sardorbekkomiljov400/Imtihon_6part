@@ -37,7 +37,9 @@ const LoginPage = () => {
 
   
   return (
-    <div className="login-bg  containers py-40 flex items-center justify-center relative ">
+    <div className="login-bg h-screen">
+
+    <div className="  containers py-40 flex items-center justify-center relative ">
     <form onSubmit={handleLoginSubmit} className="w-[463px] bg-[#cccccc] rounded-[31px]">
      <div className="flex flex-col items-start  gap-8  py-10 px-13 relative pt-20 z-2">
      <div className="bg-black px-7 py-6 rounded-full absolute -top-10 border-6 border-[#cccccc]">
@@ -59,6 +61,7 @@ const LoginPage = () => {
     </form>
   
   </div>
+    </div>
   )
 }
 

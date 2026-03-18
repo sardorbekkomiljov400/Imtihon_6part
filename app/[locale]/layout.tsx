@@ -30,9 +30,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className="antialiased">a
         <NextIntlClientProvider messages={messages}>
-          <Header/>
           {children}
-          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>

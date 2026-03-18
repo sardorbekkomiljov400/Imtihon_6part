@@ -2,7 +2,7 @@ import axios from "axios"
 import { getCookie } from "cookies-next"
 
 export const api = axios.create({
-  baseURL: "https://anorkhulov.uz", // ⚠️ MUHIM (api emas!)
+  baseURL: "https://anorkhulov.uz",  
 })
 
 api.interceptors.request.use((config) => {
