@@ -7,15 +7,14 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 
 export default function Home() {
   return (
-   <div>
-    <LayoutWrapper>
-
-      <Hero/>
-      <Popular/>
-      <Booking/>
-      <Info/>
-      <Gallery/>
-    </LayoutWrapper>
-   </div>
+    <div>
+      <LayoutWrapper>
+        <Hero />         
+        <Popular />      
+        <Booking />
+        <Info />
+        <Gallery />
+      </LayoutWrapper>
+    </div>
   );
 }

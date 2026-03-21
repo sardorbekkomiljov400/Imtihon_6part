@@ -1,57 +1,98 @@
-"use client"
+import HeroHeader from '@/components/HeroHeader'
+import Link from 'next/link'
+import { Bround4icon, Bround5icon, Bround6icon } from '@/public/icons'
 
-import Image from "next/image"
-import { Link } from "@/i18n/navigation" 
-import Button from "./Button"
-import { IconLike, IconShop } from "@/public/icons"
-import { useTranslations } from "next-intl"
-
-const HeroHeader = () => {
-  const t = useTranslations("Navbar")
-
-  const HeroList = [
-    { id: "1", href: "/menu", title: t("menu") },
-    { id: "2", href: "/navoste", title: t("news") },
-    { id: "3", href: "/brond", title: t("booking") },
-    { id: "4", href: "/About", title: t("about") },
-    { id: "5", href: "/contact", title: t("contacts") },
-  ]
+const Contacts = () => {
+  const count: number = Number("10");  
 
   return (
-    <header className="flex items-center justify-between pb-18.75">
-      {/* 4. Logotip uchun ham Link ishlatsangiz yaxshi, asosiy tilga oson qaytadi */}
-      <Link href="/">
-        <Image src={"/images/LOGO.png"} alt="LOGO" width={136} height={71} />
-      </Link>
+    <section className='relative overflow-hidden py-10'>
+      <div className='containers relative z-10 p-8 md:p-15 hero-bg rounded-[50px] bg-white/40 backdrop-blur-md shadow-lg border border-white/20 min-h-[800px]'>
+        <HeroHeader />
 
-      <nav className="flex items-center gap-10.75">
-        {HeroList.map((item) => (
-          <Link 
-            className="font-medium hover:text-red-600 active:text-red-600 transition-colors" 
-            key={item.id} 
-            href={item.href}
-          >
-            {item.title}
-          </Link>
-        ))}
-      </nav>
+        <div className="flex items-center text-sm font-normal mb-10">
+          <Link href="/" className="text-gray-500 hover:text-black transition-colors duration-200">Главная</Link>
+          <span className="mx-2 text-gray-400">›</span>
+          <span className="text-black font-medium">Контакты</span>
+        </div>
 
-      <div className="flex items-center gap-7.5">
-        <Button 
-          type="button" 
-          icon={<IconLike />} 
-          iconPost="left" 
-          extraStyle="border-2 cursor-pointer p-1.5 rounded-full hover:bg-red-600 transition-all" 
-        />
-        <Button 
-          type="button" 
-          icon={<IconShop />} 
-          iconPost="left" 
-          extraStyle="border-2 cursor-pointer p-1.5 rounded-full hover:bg-green-600 transition-all" 
-        />
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black italic">Контакты</h1>
+        
+        <div className="py-10">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 text-center items-start justify-center">
+            <li className="flex flex-col items-center gap-4">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Bround4icon />
+              </div>
+              <h3 className="text-xl font-bold">Напишите нам</h3>
+              <div className="text-gray-700 space-y-1">
+                <p>info@bmgsoft.com</p>
+                <p>t.me/bmgsoft.com</p>
+              </div>
+            </li>
+
+            <li className="flex flex-col items-center gap-4">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Bround5icon />
+              </div>
+              <h3 className="text-xl font-bold">Позвоните нам</h3>
+              <div className="text-gray-700 space-y-1 font-medium">
+                <p>+998 90 876 78 88</p>
+                <p>+998 98 653 32 22</p>
+              </div>
+            </li>
+
+            <li className="flex flex-col items-center gap-4">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Bround6icon />
+              </div>
+              <h3 className="text-xl font-bold">Посетите нас</h3>
+              <p className="text-gray-700 leading-relaxed italic">
+                Узбекистан, Ташкент <br /> Улица, 24
+              </p>
+            </li>
+          </ul>
+        </div>
+          <div className="max-w-2xl mx-auto mt-20 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-black italic">Написать нам</h2>
+            
+            <form className="space-y-5">
+              <div className="space-y-4">
+                <input 
+                  type="text" 
+                  placeholder="Ваше имя" 
+                  className="w-full p-4 border border-gray-400 rounded-xl placeholder:text-gray-600 focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-all bg-transparent"
+                />
+                <input 
+                  type="email" 
+                  placeholder="Ваш E-mail" 
+                  className="w-full p-4 border border-gray-400 rounded-xl placeholder:text-gray-600 focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-all bg-transparent"
+                />
+                <input 
+                  type="text" 
+                  placeholder="Ваш номер телефона" 
+                  className="w-full p-4 border border-gray-400 rounded-xl placeholder:text-gray-600 focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-all bg-transparent"
+                />
+                <textarea 
+                  placeholder="Ваше сообщение" 
+                  rows={4} // TypeScript xatosi yo'qoldi
+                  className="w-full p-4 border border-gray-400 rounded-xl placeholder:text-gray-600 focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-all bg-transparent resize-none"
+                ></textarea>
+              </div>
+              
+              <div className="flex justify-end pt-2">
+                <button 
+                  type="submit" 
+                  className="bg-black text-white px-10 py-3 rounded-2xl font-bold hover:bg-gray-800 transition-all active:scale-95 shadow-md"
+                >
+                  Отправить
+                </button>
+              </div>
+            </form>
+          </div>
       </div>
-    </header>
+    </section>
   )
 }
 
-export default HeroHeader
+export default Contacts

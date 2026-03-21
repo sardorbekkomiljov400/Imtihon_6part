@@ -4,8 +4,6 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/rounting';
 
 import "./globals.css";
-import Header from '@/modules/header/page';
-import Footer from '@/modules/footer/page';
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -28,7 +26,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className="antialiased">a
+      <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

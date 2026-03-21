@@ -1,32 +1,22 @@
-import { api } from "@/lib/axios"
+export const SignIn =  (body: { username: string; password: string }) => {
+  return fetch("https://anorkhulov.uz/api/auth/signin", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+};
 
-// LOGIN
-export const LoginFn = async (data: {
-  username: string
-  password: string
-}) => {
-  try {
-    const res = await api.post("/auth/signin", data)
-    return res
-  } catch (error: any) {
-    console.log("LOGIN ERROR:", error?.response?.data)
-    return null
-  }
-}
 
-// REGISTER
-export const RegisterFn = async (data: {
-  firstName: string
-  lastName: string
-  email: string
-  username: string
-  password: string
-}) => {
-  try {
-    const res = await api.post("/auth/signup", data)
-    return res.data
-  } catch (error: any) {
-    console.log("REGISTER ERROR:", error?.response?.data)
-    return null
-  }
-}
+export const Signup =  (body: { firstName: string, lastName: string, email: string, username: string, password: string }) => {
+  return fetch("https://anorkhulov.uz/api/auth/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+};
+
+ 
