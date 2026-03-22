@@ -4,7 +4,6 @@ import { IconArrowRight } from '@/public/icons'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// Ma'lumotlarni tepada chaqirib olamiz
 const chefs = [
   { id: 3, name: 'Александр Петро', role: 'главный повар', img: '/images/about3.png' },
   { id: 4, name: 'Александр Петро', role: 'помощник повара', img: '/images/about4.png' },

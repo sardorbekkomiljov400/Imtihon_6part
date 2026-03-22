@@ -1,4 +1,4 @@
-import Booking from "@/modules/bookl/page";
+import Booking from "@/modules/boking/page";
 import Gallery from "@/modules/navoste/page";
 import Hero from "@/modules/Hero/page";
 import Info from "@/modules/contenti/page";
